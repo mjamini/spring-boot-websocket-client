@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+
+        <title>Export Client API</title>
+        <meta charset="UTF-8"/>        
+        <link th:href="@{/style.css}" href="/style.css"  rel="stylesheet" type="text/css"/>
+        <link th:href="@{/menu.css}" href="/menu.css"  rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+<p th:inline="text">
+      You are logged as: <b><label id="userLabel">[[${#httpServletRequest.remoteUser}]]</label></b>
+      (<a href="/logout">logout</a>)
+    </p>
+        
+<ul>
+  <li><a href="/homepage" class="active">Home</a></li>
+  <li><a href="/project">Project Closeout</a></li>
+  <li><a href="/budget">Budget Closeout</a></li>
+  <li><a href="/administrative">Administrative Closeout</a></li>
+</ul>
+        <div id="greetings" style="color:#FFFFFF">          
+        </div>
+        <div><input id="do-some-action" type="button" value="Export" /></div>
+
+        
+    <script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/sockjs-client/sockjs.min.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/stomp-websocket/stomp.min.js}"></script>
+    <script type="text/javascript" th:src="@{/export.js}"></script>
+
+</body>
+</html>
